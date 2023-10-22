@@ -6,7 +6,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Unit1</title>
 </head>
-<body text="white" bgcolor="#000000"><pre><code><font  size=3 face="Courier New"><font color="aqua"><b>unit </b></font>Unit1<font color="aqua">;
+<body text="black" bgcolor="#FFFFFF"><pre><code><font  size=3 face="Courier New"><font color="aqua"><b>unit </b></font>Unit1<font color="aqua">;
 
 </font><font color="red">{$mode objfpc}{$H+}
 
@@ -26,6 +26,7 @@ uses
     </font>Label1<font color="aqua">: </font>TLabel<font color="aqua">;
     </font>Label2<font color="aqua">: </font>TLabel<font color="aqua">;
     </font>LabelResultado<font color="aqua">: </font>TLabel<font color="aqua">;
+    </font>LabelAlerta<font color="aqua">: </font>TLabel<font color="aqua">;
     <b>procedure </b></font>Button1Click<font color="aqua">(</font>Sender<font color="aqua">: </font>TObject<font color="aqua">);
   <b>private
     function </b></font>func<font color="aqua">(</font>x<font color="aqua">: </font>Double<font color="aqua">): </font>Double<font color="aqua">;
@@ -48,8 +49,8 @@ uses
   </font>i<font color="aqua">: </font>Integer<font color="aqua">;
 
 <b>begin
-  </b></font>max_iter<font color="aqua">:= </font><font color="fuchsia">1000000</font><font color="aqua">;
-  </font>precisao <font color="aqua">:= </font><font color="fuchsia">0.0001</font><font color="aqua">;
+  </b></font>max_iter<font color="aqua">:= </font><font color="fuchsia">100000</font><font color="aqua">;
+  </font>precisao <font color="aqua">:= </font><font color="fuchsia">0.00001</font><font color="aqua">;
   </font>a <font color="aqua">:= </font>StrToFloat<font color="aqua">(</font>EditA<font color="aqua">.</font>Text<font color="aqua">);
   </font>b <font color="aqua">:= </font>StrToFloat<font color="aqua">(</font>EditB<font color="aqua">.</font>Text<font color="aqua">);
   </font>c <font color="aqua">:= </font>a<font color="aqua">;
@@ -73,6 +74,8 @@ uses
       </b></font>a <font color="aqua">:= </font>c<font color="aqua">;
     <b>end</b>;
   <b>end</b>;
+  </font>LabelResultado<font color="aqua">.</font>Caption <font color="aqua">:= </font><font color="yellow">'A raiz é: ' </font><font color="aqua">+ </font>FloatToStr<font color="aqua">(</font>c<font color="aqua">);
+  </font>LabelAlerta<font color="aqua">.</font>Caption <font color="aqua">:= </font><font color="yellow">'Número máximo de iterações alcançado.'</font><font color="aqua">;
 <b>end</b>;
 
 <b>function </b></font>TForm1<font color="aqua">.</font>func<font color="aqua">(</font>x<font color="aqua">: </font>Double<font color="aqua">): </font>Double<font color="aqua">;
